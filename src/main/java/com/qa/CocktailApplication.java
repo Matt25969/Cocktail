@@ -12,11 +12,5 @@ public class CocktailApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CocktailApplication.class, args);
 	}
-	
-	@Bean
-	public RestTemplate restTemplate(RestTemplateBuilder builder) {
-		return builder.build(); 
-	}
 
 }
-

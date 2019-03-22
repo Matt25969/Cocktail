@@ -12,7 +12,6 @@ import com.qa.repository.CocktailRepository;
 @Component
 public class CocktailServiceImpl implements CocktailService {
 
-	@Autowired
 	private CocktailRepository cocktailRepository;
 
 	public CocktailServiceImpl() {
@@ -29,7 +28,7 @@ public class CocktailServiceImpl implements CocktailService {
 	}
 
 	@Override
-	public Cocktail createCocktail( Cocktail cocktail) {
+	public Cocktail createCocktail(Cocktail cocktail) {
 		return cocktailRepository.save(cocktail);
 
 	}
@@ -38,9 +37,9 @@ public class CocktailServiceImpl implements CocktailService {
 	public String updateCocktail(Cocktail cocktail) {
 
 		cocktailRepository.deleteById(cocktail.getId());
-		
+
 		cocktailRepository.save(cocktail);
-		
+
 		return cocktail.toString();
 	}
 
@@ -48,7 +47,5 @@ public class CocktailServiceImpl implements CocktailService {
 		cocktailRepository.delete(cocktail);
 		return "Cocktail Successfully deleted";
 	}
-
-
 
 }

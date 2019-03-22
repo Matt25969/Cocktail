@@ -44,7 +44,7 @@ public class WebMockTest {
 	private CocktailService service;
 	
 	@MockBean
-	private RestTemplate restTemplate;;
+	private RestTemplate restTemplate;
 
 	private static final Cocktail MOCK_COCKTAIL_1 = new Cocktail(1L, "Vodka somthing");
 	private static final Cocktail MOCK_COCKTAIL_2 = new Cocktail(2L, "Whiskey Doo-dah");

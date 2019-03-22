@@ -22,10 +22,13 @@ import com.qa.service.CocktailService;
 @RestController
 public class CocktailController {
 
-	@Autowired
+	public CocktailController(CocktailService service, RestTemplate restTemplate) {
+		this.service = service;
+		this.restTemplate = restTemplate;
+	}
+
 	public CocktailService service;
 
-	@Autowired
 	private RestTemplate restTemplate;
 
 	@RequestMapping("/getAllCocktails")
@@ -57,7 +60,8 @@ public class CocktailController {
 	@GetMapping("/getMicro")
 	public String getMicro() {
 
-		ResponseEntity<String> exchangeCocktail = restTemplate.exchange("http://localhost:8081/getMicro", HttpMethod.GET, null,  String.class);
+		ResponseEntity<String> exchangeCocktail = restTemplate.exchange("http://localhost:8081/getMicro",
+				HttpMethod.GET, null, String.class);
 		return exchangeCocktail.getBody();
 
 	}
