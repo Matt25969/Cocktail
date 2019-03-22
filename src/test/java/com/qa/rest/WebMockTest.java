@@ -1,6 +1,7 @@
 package com.qa.rest;
 
 import static org.hamcrest.Matchers.containsString;
+import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -68,8 +69,10 @@ public class WebMockTest {
 		
 		 String postValue = OBJECT_MAPPER.writeValueAsString(MOCK_COCKTAIL_1);
 		 
-		 when(service.createCocktail(MOCK_COCKTAIL_1)).thenReturn(MOCK_COCKTAIL_1);
-		
+//		 when(service.createCocktail(MOCK_COCKTAIL_1)).thenReturn(MOCK_COCKTAIL_1);
+		 
+		 doReturn(MOCK_COCKTAIL_1).when(service).createCocktail(MOCK_COCKTAIL_1);
+		 
 		mockMvc.perform(MockMvcRequestBuilders
                 .post("/createCocktail")
                 .contentType(MediaType.APPLICATION_JSON).content(postValue))

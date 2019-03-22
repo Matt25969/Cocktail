@@ -18,6 +18,7 @@ public class CocktailServiceImpl implements CocktailService {
 
 	}
 
+	@Autowired
 	public CocktailServiceImpl(CocktailRepository cocktailRepository) {
 		this.cocktailRepository = cocktailRepository;
 	}

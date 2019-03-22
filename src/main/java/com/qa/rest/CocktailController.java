@@ -21,14 +21,19 @@ import com.qa.service.CocktailService;
 
 @RestController
 public class CocktailController {
-
-	public CocktailController(CocktailService service, RestTemplate restTemplate) {
+	@Autowired
+	public CocktailController( CocktailService service, RestTemplate restTemplate) {
 		this.service = service;
 		this.restTemplate = restTemplate;
+	}
+	
+	public CocktailController() {
+		// TODO Auto-generated constructor stub
 	}
 
 	public CocktailService service;
 
+	
 	private RestTemplate restTemplate;
 
 	@RequestMapping("/getAllCocktails")

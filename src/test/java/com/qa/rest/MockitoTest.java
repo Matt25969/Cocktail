@@ -86,6 +86,8 @@ public class MockitoTest {
 		Mockito.when(restTemp.exchange(MOCK_URL, HttpMethod.GET, null,  String.class)).thenReturn(MOCK_MICRO_BODY_RESPONSE);
 		
 		assertEquals(MOCK_MICRO_BODY_RESPONSE.getBody(), controller.getMicro());
+		
+		Mockito.verify(restTemp).exchange(MOCK_URL, HttpMethod.GET, null,  String.class);
 
 	}
 
