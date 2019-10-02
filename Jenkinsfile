@@ -1,7 +1,7 @@
 pipeline{
         agent any
         stages{ 
-		stage('---Build Image---'){
+		stage('---Build_Image---'){
                         steps{
                                 sudo docker build -t cocktail .
                         }
