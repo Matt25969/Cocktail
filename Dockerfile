@@ -4,5 +4,5 @@ COPY . .
 RUN mvn clean package
 FROM java:8
 WORKDIR /opt/website
-COPY --from=maven-build /build/target/Cocktail-SNAPSHOT.jar app.jar
+COPY --from=maven-build /build/target/Cocktail-SNAPSHOT.0.0.1.jar app.jar
 ENTRYPOINT ["/usr/bin/java", "-jar", "app.jar"]
