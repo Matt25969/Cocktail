@@ -36,7 +36,7 @@ public class CocktailController {
 	
 	private RestTemplate restTemplate;
 
-	@RequestMapping("/getAllCocktailss")
+	@RequestMapping("/getAllCocktails")
 	public List<Cocktail> getAllCocktails() {
 
 		return service.findAll();
