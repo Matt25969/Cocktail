@@ -14,7 +14,7 @@ pipeline{
         					sudo docker rm -f cocktail
     					fi
     					# run your container
-				sudo docker run -d --name cocktail -p 8888:8080 cocktail
+				sudo docker run -d --name cocktail -p 8888:8888 cocktail
 				fi'''
                         }
                 }
